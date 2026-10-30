@@ -1,0 +1,19 @@
+Package: dilatR
+Title: Matrices de dilatation pour le génie civil
+Version: 0.1.0
+Authors@R: 
+    person("Jordan", "Ngoufo", , "metagueujordan@gmail.com", role = c("aut", "cre"))
+Description: Construit, applique, compose et analyse des matrices de
+    dilatation diagonales (isotropes ou anisotropes) en dimension 2 ou 3.
+    Fournit la dilatation thermique linéaire, des représentations
+    graphiques et le dimensionnement des joints de dilatation d'un pont.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Language: fr
+Depends: R (>= 4.0.0)
+Imports: ggplot2 (>= 3.4.0), utils
+Suggests: knitr, rmarkdown, testthat (>= 3.0.0)
+Config/testthat/edition: 3
+LazyData: true
+Config/roxygen2/version: 8.1.1
+VignetteBuilder: knitr

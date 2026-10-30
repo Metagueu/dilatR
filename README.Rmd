@@ -1,0 +1,96 @@
+---
+output: github_document
+---
+
+<!-- README.md est généré à partir de README.Rmd : modifier README.Rmd, puis lancer devtools::build_readme(). -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "70%"
+)
+```
+
+# dilatR
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+**dilatR** construit, applique, compose et analyse des *matrices de dilatation*
+(isotropes ou anisotropes, en 2D ou 3D), calcule la dilatation thermique
+linéaire et dimensionne le **joint de dilatation d'un pont**.
+
+Une matrice de dilatation est une matrice diagonale `D = diag(s1, ..., sn)` avec
+`si > 0` : elle multiplie l'axe `i` par le facteur `si`. Son déterminant donne la
+variation de volume. En thermique, `si = 1 + αi·ΔT`, où `αi` est le coefficient
+de dilatation linéique selon l'axe `i` et `ΔT` l'écart de température.
+
+## Installation
+
+```r
+# install.packages("remotes")
+remotes::install_github("Metagueu/dilatR")
+```
+
+## Exemple : le joint d'un tablier acier de 100 m
+
+```{r exemple}
+library(dilatR)
+
+# Pose à 10 °C, températures extrêmes de -10 à 40 °C
+dilat_joint(L0 = 100, alpha = 12e-6, T_min = -10, T_max = 40, T_ref = 10)
+```
+
+Il faut prévoir un joint de 72 mm (course de 60 mm, plus 20 % de marge). Avec le
+jeu de données `materiaux` fourni par le package, on compare avec le béton :
+
+```{r beton}
+a <- materiaux$alpha_x[materiaux$materiau == "Beton"]
+dilat_joint(100, a, -10, 40, T_ref = 10)$capacite_mm
+```
+
+## La matrice derrière le calcul
+
+```{r matrice}
+D <- dilat_thermique(12e-6, dT = 30, dim = 3)
+D
+dilat_resume(D)$variation_pct
+```
+
+Pour un matériau anisotrope comme le bois (fibres selon x), la déformation
+dépend de la direction. Les dilatations thermiques sont minuscules : `amplif`
+les exagère pour que le dessin soit lisible (le facteur est écrit sur le graphique).
+
+```{r bois}
+bois <- dilat_thermique(c(5e-6, 35e-6), dT = 40)
+dilat_plot(bois, amplif = 500)
+```
+
+## Les fonctions
+
+| Fonction | Rôle |
+|:--|:--|
+| `dilat_matrice()` | construire `D = diag(s)` |
+| `dilat_thermique()` | construire `D = diag(1 + α·ΔT)` |
+| `dilat_appliquer()` | transformer des points |
+| `dilat_inverse()` | revenir à la forme initiale |
+| `dilat_composer()` | enchaîner plusieurs dilatations |
+| `dilat_resume()` | déterminant, valeurs propres, anisotropie |
+| `dilat_plot()` | dessiner une forme avant et après |
+| `dilat_joint()` | dimensionner un joint de pont |
+| `materiaux` | coefficients de dilatation de matériaux courants |
+
+Le tutoriel complet est dans la vignette :
+`vignette("dilatR")` (installer avec `build_vignettes = TRUE`).
+
+## Limites
+
+Modèle au premier ordre, coefficient α constant, température uniforme et
+dilatation libre (pas de contraintes, de retrait ni de fluage), axes principaux
+alignés avec le repère. Les valeurs de `materiaux` sont indicatives.
+
+## Licence
+
+MIT.

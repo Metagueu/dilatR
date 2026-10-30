@@ -1,0 +1,23 @@
+#' Coefficients de dilatation thermique de matériaux courants
+#'
+#' Huit matériaux, avec un coefficient de dilatation linéique par axe
+#' (\eqn{\alpha_x}{alpha_x}, \eqn{\alpha_y}{alpha_y}, \eqn{\alpha_z}{alpha_z}).
+#' Pour les matériaux isotropes, les trois valeurs sont égales ; pour le bois
+#' et le composite carbone/époxy, l'axe x est le sens des fibres.
+#'
+#' @format Un \code{data.frame} de 8 lignes et 6 colonnes :
+#' \describe{
+#'   \item{materiau}{Nom du matériau.}
+#'   \item{famille}{Famille : metal, mineral, bois ou composite.}
+#'   \item{alpha_x}{Coefficient de dilatation selon x, en K^-1.}
+#'   \item{alpha_y}{Coefficient de dilatation selon y, en K^-1.}
+#'   \item{alpha_z}{Coefficient de dilatation selon z, en K^-1.}
+#'   \item{source}{Origine de la valeur.}
+#' }
+#' @source Valeurs indicatives (Eurocodes EN 1993-1-1 pour l'acier et
+#'   EN 1992-1-1 pour le béton ; autres valeurs : ordres de grandeur, à
+#'   remplacer par des valeurs sourcées).
+#' @examples
+#' head(materiaux)
+#' dilat_thermique(unlist(materiaux[7, c("alpha_x", "alpha_y", "alpha_z")]), 40)
+"materiaux"
