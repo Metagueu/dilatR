@@ -1,0 +1,25 @@
+url: https://metagueu.github.io/dilatR/
+template:
+  bootstrap: 5
+
+
+reference:
+- title: Construire une matrice de dilatation
+  contents:
+  - dilat_matrice
+  - dilat_thermique
+- title: Utiliser une matrice
+  contents:
+  - dilat_appliquer
+  - dilat_inverse
+  - dilat_composer
+  - dilat_resume
+- title: Visualiser
+  contents:
+  - dilat_plot
+- title: Application au joint de pont
+  contents:
+  - dilat_joint
+- title: Données
+  contents:
+  - materiaux

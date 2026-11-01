@@ -17,5 +17,5 @@ Config/testthat/edition: 3
 LazyData: true
 Config/roxygen2/version: 8.1.1
 VignetteBuilder: knitr
-URL: https://github.com/Metagueu/dilatR
+URL: https://github.com/Metagueu/dilatR, https://metagueu.github.io/dilatR/
 BugReports: https://github.com/Metagueu/dilatR/issues
