@@ -1,0 +1,17 @@
+---
+title: "Sommaire"
+output: rmarkdown::html_vignette
+---
+
+<div class="sommaire">
+<a class="som-item" href="dilatR.html#le-problème"><b>1</b><div><span>Le problème</span><i>Pourquoi un pont a besoin de joints de dilatation</i></div></a>
+<a class="som-item" href="dilatR.html#la-matrice-de-dilatation"><b>2</b><div><span>La matrice de dilatation</span><i>Définition, cas isotrope, cas thermique</i></div></a>
+<a class="som-item" href="dilatR.html#appliquer-la-matrice-à-des-points"><b>3</b><div><span>Appliquer la matrice</span><i>Du carré au rectangle, du cercle à l'ellipse</i></div></a>
+<a class="som-item" href="dilatR.html#lire-les-propriétés"><b>4</b><div><span>Lire les propriétés</span><i>Déterminant, valeurs propres, inverse, composition</i></div></a>
+<a class="som-item" href="dilatR.html#un-matériau-anisotrope-le-bois"><b>5</b><div><span>Un matériau anisotrope</span><i>L'exemple du bois</i></div></a>
+<a class="som-item" href="dilatR.html#dimensionner-un-joint-de-pont"><b>6</b><div><span>Dimensionner un joint de pont</span><i>Application : course et capacité du joint</i></div></a>
+<a class="som-item" href="dilatR.html#limites-du-modèle"><b>7</b><div><span>Limites du modèle</span><i>Ce que le modèle ne dit pas</i></div></a>
+<a class="som-item" href="remerciements.html"><b>8</b><div><span>Remerciements</span><i>Merci pour votre attention</i></div></a>
+</div>
+
+<p class="page-nav"><a href="../index.html">← Retour à la couverture</a></p>

@@ -1,8 +1,19 @@
 url: https://metagueu.github.io/dilatR/
 template:
   bootstrap: 5
-
-
+  math-rendering: mathjax
+  bslib:
+    bg: "#E5E7EB"
+    fg: "#111827"
+    primary: "#0B5F68"
+navbar:
+  structure:
+    left: [sommaire, reference, articles, news]
+    right: [search, github]
+  components:
+    sommaire:
+      text: Sommaire
+      href: articles/sommaire.html
 reference:
 - title: Construire une matrice de dilatation
   contents:
@@ -20,6 +31,6 @@ reference:
 - title: Application au joint de pont
   contents:
   - dilat_joint
-- title: Données
+- title: Donnees
   contents:
   - materiaux

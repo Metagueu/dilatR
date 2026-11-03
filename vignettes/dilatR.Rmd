@@ -28,6 +28,8 @@ physique, puis on l'applique au dimensionnement d'un joint.
 library(dilatR)
 ```
 
+<p class="page-nav"><a href="sommaire.html">← Retour au sommaire</a></p>
+
 ## 1. La matrice de dilatation
 
 En dimension $n$, une matrice de dilatation est une matrice diagonale à
@@ -220,3 +222,5 @@ fois celle de l'Invar.
 * **Températures simplifiées** : les valeurs réglementaires viennent de
   l'Eurocode 1, actions thermiques (EN 1991-1-5).
 * **Valeurs de `materiaux` indicatives** : à remplacer par des valeurs sourcées.
+
+<p class="page-nav"><a href="sommaire.html">← Sommaire</a> · <a href="remerciements.html">Suite : remerciements →</a></p>
