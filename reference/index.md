@@ -28,7 +28,7 @@
 - [`dilat_joint()`](https://metagueu.github.io/dilatR/reference/dilat_joint.md)
   : Dimensionner un joint de dilatation de pont
 
-## Données
+## Donnees
 
 - [`materiaux`](https://metagueu.github.io/dilatR/reference/materiaux.md)
   : Coefficients de dilatation thermique de matériaux courants

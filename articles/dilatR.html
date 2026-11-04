@@ -5,11 +5,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Dimensionner un joint de pont avec dilatR • dilatR</title>
-<script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- mathjax math --><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script><script>
+  window.MathJax = {
+    chtml: {
+      fontURL: "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/output/chtml/fonts/woff-v2"
+    }
+  };
+</script><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Dimensionner un joint de pont avec dilatR">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><link href="../extra.css" rel="stylesheet">
+<meta property="og:title" content="Dimensionner un joint de pont avec dilatR">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -28,8 +35,15 @@
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
-<li class="active nav-item"><a class="nav-link" href="../articles/dilatR.html">Get started</a></li>
+<li class="nav-item"><a class="nav-link" href="../articles/sommaire.html">Sommaire</a></li>
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
+<li class="nav-item dropdown">
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
+<li><a class="dropdown-item" href="../articles/remerciements.html">Remerciements</a></li>
+    <li><a class="dropdown-item" href="../articles/sommaire.html">Sommaire</a></li>
+  </ul>
+</li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul>
 <ul class="navbar-nav">
@@ -66,44 +80,39 @@
 il refroidit. Le <strong>joint de dilatation</strong> laisse ce
 mouvement se produire librement ; s’il est trop petit, la structure est
 contrainte. Si l’allongement est totalement empêché, la contrainte vaut
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><mi>E</mi><mspace width="0.167em"></mspace><mi>α</mi><mspace width="0.167em"></mspace><mi mathvariant="normal">Δ</mi><mi>T</mi></mrow><annotation encoding="application/x-tex">\sigma = E\,\alpha\,\Delta T</annotation></semantics></math>
-: pour l’acier
-(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>=</mo><mn>210</mn><mspace width="0.222em"></mspace><mrow><mi mathvariant="normal">G</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">a</mi></mrow></mrow><annotation encoding="application/x-tex">E = 210\ \mathrm{GPa}</annotation></semantics></math>,
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>12</mn><mo>×</mo><msup><mn>10</mn><mrow><mi>−</mi><mn>6</mn></mrow></msup><mspace width="0.222em"></mspace><msup><mi mathvariant="normal">K</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\alpha = 12\times10^{-6}\ \mathrm{K}^{-1}</annotation></semantics></math>)
-et
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>=</mo><mn>30</mn><mspace width="0.222em"></mspace><mi mathvariant="normal">K</mi></mrow><annotation encoding="application/x-tex">\Delta T = 30\ \mathrm{K}</annotation></semantics></math>,
-cela fait environ
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>76</mn><mspace width="0.222em"></mspace><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">a</mi></mrow></mrow><annotation encoding="application/x-tex">76\ \mathrm{MPa}</annotation></semantics></math>
-sans aucune charge.</p>
+<span class="math inline">\(\sigma = E\,\alpha\,\Delta T\)</span> : pour
+l’acier (<span class="math inline">\(E = 210\ \mathrm{GPa}\)</span>,
+<span class="math inline">\(\alpha = 12\times10^{-6}\
+\mathrm{K}^{-1}\)</span>) et <span class="math inline">\(\Delta T = 30\
+\mathrm{K}\)</span>, cela fait environ <span class="math inline">\(76\
+\mathrm{MPa}\)</span> sans aucune charge.</p>
 <p>Ce tutoriel suit la démarche du package : une <strong>matrice de
 dilatation</strong> décrit la déformation, ses propriétés (déterminant,
 valeurs propres) ont un sens physique, puis on l’applique au
 dimensionnement d’un joint.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Metagueu/dilatR" class="external-link">dilatR</a></span><span class="op">)</span></span></code></pre></div>
+<p class="page-nav">
+<a href="sommaire.html">← Retour au sommaire</a>
+</p>
 </div>
 <div class="section level2">
 <h2 id="la-matrice-de-dilatation">1. La matrice de dilatation<a class="anchor" aria-label="anchor" href="#la-matrice-de-dilatation"></a>
 </h2>
-<p>En dimension
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>,
-une matrice de dilatation est une matrice diagonale à coefficients
-strictement positifs :</p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mrow><mi mathvariant="normal">d</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">g</mi></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>s</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>s</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>s</mi><mn>1</mn></msub></mtd><mtd columnalign="center" style="text-align: center"></mtd><mtd columnalign="center" style="text-align: center"></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"></mtd><mtd columnalign="center" style="text-align: center"><mo>⋱</mo></mtd><mtd columnalign="center" style="text-align: center"></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"></mtd><mtd columnalign="center" style="text-align: center"></mtd><mtd columnalign="center" style="text-align: center"><msub><mi>s</mi><mi>n</mi></msub></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>s</mi><mi>i</mi></msub><mo>&gt;</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+<p>En dimension <span class="math inline">\(n\)</span>, une matrice de
+dilatation est une matrice diagonale à coefficients strictement positifs
+:</p>
+<p><span class="math display">\[
 D = \mathrm{diag}(s_1, \ldots, s_n) =
-\begin{pmatrix} s_1 &amp; &amp; \\ &amp; \ddots &amp; \\ &amp; &amp; s_n \end{pmatrix},
+\begin{pmatrix} s_1 &amp; &amp; \\ &amp; \ddots &amp; \\ &amp; &amp; s_n
+\end{pmatrix},
 \qquad s_i &gt; 0 .
-</annotation></semantics></math></p>
-<p>Elle multiplie l’axe
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>
-par le facteur
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>i</mi></msub><annotation encoding="application/x-tex">s_i</annotation></semantics></math>
-:
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>x</mi><mi>i</mi><mo>′</mo></msubsup><mo>=</mo><msub><mi>s</mi><mi>i</mi></msub><mspace width="0.167em"></mspace><msub><mi>x</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">x'_i = s_i\,x_i</annotation></semantics></math>.
-Si tous les facteurs sont égaux,
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mi>s</mi><mspace width="0.167em"></mspace><msub><mi>I</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">D = s\,I_n</annotation></semantics></math>
-: la dilatation est <em>isotrope</em> et la forme est conservée. Sinon
-elle est <em>anisotrope</em>.</p>
+\]</span></p>
+<p>Elle multiplie l’axe <span class="math inline">\(i\)</span> par le
+facteur <span class="math inline">\(s_i\)</span> : <span class="math inline">\(x'_i = s_i\,x_i\)</span>. Si tous les facteurs
+sont égaux, <span class="math inline">\(D = s\,I_n\)</span> : la
+dilatation est <em>isotrope</em> et la forme est conservée. Sinon elle
+est <em>anisotrope</em>.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">D</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dilat_matrice.html">dilat_matrice</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">3</span>, <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">D</span></span>
@@ -114,24 +123,17 @@ elle est <em>anisotrope</em>.</p>
 <h3 id="le-cas-thermique">Le cas thermique<a class="anchor" aria-label="anchor" href="#le-cas-thermique"></a>
 </h3>
 <p>La loi de dilatation linéique, valable pour de petites variations de
-température, donne directement le facteur de dilatation
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
-:</p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><msub><mi>L</mi><mn>0</mn></msub><mspace width="0.167em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>α</mi><mspace width="0.167em"></mspace><mi mathvariant="normal">Δ</mi><mi>T</mi><mo stretchy="false" form="postfix">)</mo><mspace width="1.0em"></mspace><mo>⇒</mo><mspace width="1.0em"></mspace><mi>s</mi><mo>=</mo><mfrac><mi>L</mi><msub><mi>L</mi><mn>0</mn></msub></mfrac><mo>=</mo><mn>1</mn><mo>+</mo><mi>α</mi><mspace width="0.167em"></mspace><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>,</mo><mspace width="2.0em"></mspace><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>=</mo><mi>T</mi><mo>−</mo><msub><mi>T</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+température, donne directement le facteur de dilatation <span class="math inline">\(s\)</span> :</p>
+<p><span class="math display">\[
 L = L_0\,(1 + \alpha\,\Delta T)
 \quad\Longrightarrow\quad
 s = \frac{L}{L_0} = 1 + \alpha\,\Delta T,
 \qquad \Delta T = T - T_{\mathrm{ref}} .
-</annotation></semantics></math></p>
-<p>Chaque axe peut avoir son propre coefficient
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>α</mi><mi>i</mi></msub><annotation encoding="application/x-tex">\alpha_i</annotation></semantics></math>
-(bois, composites) :
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mi>i</mi></msub><mo>=</mo><mn>1</mn><mo>+</mo><msub><mi>α</mi><mi>i</mi></msub><mspace width="0.167em"></mspace><mi mathvariant="normal">Δ</mi><mi>T</mi></mrow><annotation encoding="application/x-tex">s_i = 1 + \alpha_i\,\Delta T</annotation></semantics></math>.
-Les unités comptent :
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>
-s’exprime en
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="normal">K</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">\mathrm{K}^{-1}</annotation></semantics></math>,
-donc <code>12e-6</code> et non <code>12</code>.</p>
+\]</span></p>
+<p>Chaque axe peut avoir son propre coefficient <span class="math inline">\(\alpha_i\)</span> (bois, composites) : <span class="math inline">\(s_i = 1 + \alpha_i\,\Delta T\)</span>. Les unités
+comptent : <span class="math inline">\(\alpha\)</span> s’exprime en
+<span class="math inline">\(\mathrm{K}^{-1}\)</span>, donc
+<code>12e-6</code> et non <code>12</code>.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/dilat_thermique.html">dilat_thermique</a></span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">12e-6</span>, dT <span class="op">=</span> <span class="fl">50</span>, dim <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
 <span><span class="co">#&gt;        [,1]   [,2]   [,3]</span></span>
@@ -144,12 +146,11 @@ donc <code>12e-6</code> et non <code>12</code>.</p>
 <h2 id="appliquer-la-matrice-à-des-points">2. Appliquer la matrice à des points<a class="anchor" aria-label="anchor" href="#appliquer-la-matrice-%C3%A0-des-points"></a>
 </h2>
 <p>Les points sont rangés en lignes, un point par ligne. Pour une
-matrice
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
-de points, le résultat est</p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>X</mi><mo>′</mo></msup><mo>=</mo><mi>X</mi><mspace width="0.167em"></mspace><msup><mi>D</mi><mi>𝖳</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+matrice <span class="math inline">\(X\)</span> de points, le résultat
+est</p>
+<p><span class="math display">\[
 X' = X\,D^{\mathsf T} .
-</annotation></semantics></math></p>
+\]</span></p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">carre</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">rbind</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/dilat_appliquer.html">dilat_appliquer</a></span><span class="op">(</span><span class="va">D</span>, <span class="va">carre</span><span class="op">)</span></span>
@@ -158,18 +159,13 @@ X' = X\,D^{\mathsf T} .
 <span><span class="co">#&gt; [2,]    3  0.0</span></span>
 <span><span class="co">#&gt; [3,]    3  0.5</span></span>
 <span><span class="co">#&gt; [4,]    0  0.5</span></span></code></pre></div>
-<p>Le carré unité devient un rectangle
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>×</mo><mn>0</mn><mo>,</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">3 \times 0{,}5</annotation></semantics></math>.
-<code><a href="../reference/dilat_plot.html">dilat_plot()</a></code> dessine la forme avant (pointillés) et après
-(trait plein) :</p>
+<p>Le carré unité devient un rectangle <span class="math inline">\(3
+\times 0{,}5\)</span>. <code><a href="../reference/dilat_plot.html">dilat_plot()</a></code> dessine la forme avant
+(pointillés) et après (trait plein) :</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/dilat_plot.html">dilat_plot</a></span><span class="op">(</span><span class="va">D</span>, <span class="st">"carre"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="dilatR_files/figure-html/plot-carre-1.png" class="r-plt" alt="" width="576"></p>
-<p>Un cercle devient une ellipse de demi-axes
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>,</mo><mn>5</mn><mspace width="0.167em"></mspace><msub><mi>s</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">0{,}5\,s_1</annotation></semantics></math>
-et
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>,</mo><mn>5</mn><mspace width="0.167em"></mspace><msub><mi>s</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">0{,}5\,s_2</annotation></semantics></math>
-:</p>
+<p>Un cercle devient une ellipse de demi-axes <span class="math inline">\(0{,}5\,s_1\)</span> et <span class="math inline">\(0{,}5\,s_2\)</span> :</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/dilat_plot.html">dilat_plot</a></span><span class="op">(</span><span class="va">D</span>, <span class="st">"cercle"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="dilatR_files/figure-html/plot-cercle-1.png" class="r-plt" alt="" width="576"></p>
@@ -177,18 +173,17 @@ et
 <div class="section level2">
 <h2 id="lire-les-propriétés">3. Lire les propriétés<a class="anchor" aria-label="anchor" href="#lire-les-propri%C3%A9t%C3%A9s"></a>
 </h2>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">det</mi><mo>⁡</mo></mrow><mi>D</mi><mo>=</mo><munderover><mo>∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>s</mi><mi>i</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><mi>D</mi><mspace width="0.167em"></mspace><msub><mi>𝐞</mi><mi>i</mi></msub><mo>=</mo><msub><mi>s</mi><mi>i</mi></msub><mspace width="0.167em"></mspace><msub><mi>𝐞</mi><mi>i</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><mi>κ</mi><mo>=</mo><mfrac><msub><mi>s</mi><mi mathvariant="normal">max</mi></msub><msub><mi>s</mi><mi mathvariant="normal">min</mi></msub></mfrac><mo>≥</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+<p><span class="math display">\[
 \det D = \prod_{i=1}^{n} s_i ,
 \qquad
 D\,\mathbf{e}_i = s_i\,\mathbf{e}_i ,
 \qquad
 \kappa = \frac{s_{\max}}{s_{\min}} \ge 1 .
-</annotation></semantics></math></p>
+\]</span></p>
 <p>Le déterminant est le facteur par lequel les volumes (les aires en
 2D) sont multipliés ; les valeurs propres sont les facteurs le long des
-axes principaux ;
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\kappa = 1</annotation></semantics></math>
-si et seulement si la dilatation est isotrope.</p>
+axes principaux ; <span class="math inline">\(\kappa = 1\)</span> si et
+seulement si la dilatation est isotrope.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/dilat_resume.html">dilat_resume</a></span><span class="op">(</span><span class="va">D</span><span class="op">)</span></span>
 <span><span class="co">#&gt; $facteurs</span></span>
@@ -210,11 +205,11 @@ si et seulement si la dilatation est isotrope.</p>
 <span><span class="co">#&gt; [1] FALSE</span></span></code></pre></div>
 <p>L’inverse ramène à la forme initiale, et la composition multiplie les
 facteurs :</p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>D</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>=</mo><mrow><mi mathvariant="normal">d</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">g</mi></mrow><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mn>1</mn><msub><mi>s</mi><mn>1</mn></msub></mfrac><mo>,</mo><mi>…</mi><mo>,</mo><mfrac><mn>1</mn><msub><mi>s</mi><mi>n</mi></msub></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>D</mi><mn>1</mn></msub><msub><mi>D</mi><mn>2</mn></msub><mo>=</mo><mrow><mi mathvariant="normal">d</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">g</mi></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>s</mi><mn>1</mn></msub><msub><mi>t</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>s</mi><mi>n</mi></msub><msub><mi>t</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>D</mi><mn>2</mn></msub><msub><mi>D</mi><mn>1</mn></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+<p><span class="math display">\[
 D^{-1} = \mathrm{diag}\!\left(\frac1{s_1}, \ldots, \frac1{s_n}\right),
 \qquad
 D_1 D_2 = \mathrm{diag}(s_1 t_1, \ldots, s_n t_n) = D_2 D_1 .
-</annotation></semantics></math></p>
+\]</span></p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">D</span> <span class="op"><a href="https://rdrr.io/r/base/matmult.html" class="external-link">%*%</a></span> <span class="fu"><a href="../reference/dilat_inverse.html">dilat_inverse</a></span><span class="op">(</span><span class="va">D</span><span class="op">)</span></span>
 <span><span class="co">#&gt;      [,1] [,2]</span></span>
@@ -228,8 +223,7 @@ D_1 D_2 = \mathrm{diag}(s_1 t_1, \ldots, s_n t_n) = D_2 D_1 .
 <div class="section level2">
 <h2 id="un-matériau-anisotrope-le-bois">4. Un matériau anisotrope : le bois<a class="anchor" aria-label="anchor" href="#un-mat%C3%A9riau-anisotrope-le-bois"></a>
 </h2>
-<p>Dans le sens des fibres (axe
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>),
+<p>Dans le sens des fibres (axe <span class="math inline">\(x\)</span>),
 le bois se dilate beaucoup moins que dans le sens transversal.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">bois</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dilat_thermique.html">dilat_thermique</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">5e-6</span>, <span class="fl">35e-6</span><span class="op">)</span>, dT <span class="op">=</span> <span class="fl">40</span><span class="op">)</span></span>
@@ -239,14 +233,11 @@ le bois se dilate beaucoup moins que dans le sens transversal.</p>
 <span><span class="co">#&gt; [2,] 0.0000 1.0014</span></span>
 <span><span class="fu"><a href="../reference/dilat_resume.html">dilat_resume</a></span><span class="op">(</span><span class="va">bois</span><span class="op">)</span><span class="op">$</span><span class="va">anisotropie</span></span>
 <span><span class="co">#&gt; [1] 1.0012</span></span></code></pre></div>
-<p>Les dilatations thermiques sont minuscules
-(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi><mo>≈</mo><msup><mn>10</mn><mrow><mi>−</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\varepsilon \approx 10^{-3}</annotation></semantics></math>)
-: sans précaution, les deux formes se superposent sur le dessin.
-L’argument <code>amplif</code> exagère l’écart à 1 :
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>s</mi><mi>i</mi><mtext mathvariant="normal">tracé</mtext></msubsup><mo>=</mo><mn>1</mn><mo>+</mo><mi>a</mi><mspace width="0.167em"></mspace><mo stretchy="false" form="prefix">(</mo><msub><mi>s</mi><mi>i</mi></msub><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">s_i^{\text{tracé}} = 1 + a\,(s_i - 1)</annotation></semantics></math>,
-et le facteur
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
-est écrit sur le graphique.</p>
+<p>Les dilatations thermiques sont minuscules (<span class="math inline">\(\varepsilon \approx 10^{-3}\)</span>) : sans
+précaution, les deux formes se superposent sur le dessin. L’argument
+<code>amplif</code> exagère l’écart à 1 : <span class="math inline">\(s_i^{\text{tracé}} = 1 + a\,(s_i - 1)\)</span>, et
+le facteur <span class="math inline">\(a\)</span> est écrit sur le
+graphique.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/dilat_plot.html">dilat_plot</a></span><span class="op">(</span><span class="va">bois</span>, amplif <span class="op">=</span> <span class="fl">500</span><span class="op">)</span></span></code></pre></div>
 <p><img src="dilatR_files/figure-html/plot-bois-1.png" class="r-plt" alt="" width="576"></p>
@@ -255,29 +246,19 @@ est écrit sur le graphique.</p>
 <h2 id="dimensionner-un-joint-de-pont">5. Dimensionner un joint de pont<a class="anchor" aria-label="anchor" href="#dimensionner-un-joint-de-pont"></a>
 </h2>
 <p>Seul le facteur de dilatation selon l’axe du tablier compte. Avec
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mn>0</mn></msub><annotation encoding="application/x-tex">L_0</annotation></semantics></math>
-la longueur dilatable,
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>
-le coefficient et
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
-la marge de sécurité :</p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>L</mi><mi mathvariant="normal">max</mi></msub><mo>=</mo><msub><mi>L</mi><mn>0</mn></msub><mspace width="0.167em"></mspace><mi>α</mi><mspace width="0.167em"></mspace><mo stretchy="false" form="prefix">(</mo><msub><mi>T</mi><mi mathvariant="normal">max</mi></msub><mo>−</mo><msub><mi>T</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi></mrow></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mi mathvariant="normal">Δ</mi><msub><mi>L</mi><mi mathvariant="normal">min</mi></msub><mo>=</mo><msub><mi>L</mi><mn>0</mn></msub><mspace width="0.167em"></mspace><mi>α</mi><mspace width="0.167em"></mspace><mo stretchy="false" form="prefix">(</mo><msub><mi>T</mi><mi mathvariant="normal">min</mi></msub><mo>−</mo><msub><mi>T</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi></mrow></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+<span class="math inline">\(L_0\)</span> la longueur dilatable, <span class="math inline">\(\alpha\)</span> le coefficient et <span class="math inline">\(m\)</span> la marge de sécurité :</p>
+<p><span class="math display">\[
 \Delta L_{\max} = L_0\,\alpha\,(T_{\max} - T_{\mathrm{ref}}),
 \qquad
 \Delta L_{\min} = L_0\,\alpha\,(T_{\min} - T_{\mathrm{ref}}),
-</annotation></semantics></math></p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mi mathvariant="normal">Δ</mi><msub><mi>L</mi><mi mathvariant="normal">max</mi></msub><mo>−</mo><mi mathvariant="normal">Δ</mi><msub><mi>L</mi><mi mathvariant="normal">min</mi></msub><mo>=</mo><msub><mi>L</mi><mn>0</mn></msub><mspace width="0.167em"></mspace><mi>α</mi><mspace width="0.167em"></mspace><mo stretchy="false" form="prefix">(</mo><msub><mi>T</mi><mi mathvariant="normal">max</mi></msub><mo>−</mo><msub><mi>T</mi><mi mathvariant="normal">min</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>C</mi><mtext mathvariant="normal">joint</mtext></msub><mo>=</mo><mi>C</mi><mspace width="0.167em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>m</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
-C = \Delta L_{\max} - \Delta L_{\min} = L_0\,\alpha\,(T_{\max} - T_{\min}),
+\]</span></p>
+<p><span class="math display">\[
+C = \Delta L_{\max} - \Delta L_{\min} = L_0\,\alpha\,(T_{\max} -
+T_{\min}),
 \qquad
 C_{\text{joint}} = C\,(1 + m) .
-</annotation></semantics></math></p>
-<p>Pour un tablier acier de 100 m, posé à
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>10</mn><msup><mspace width="0.222em"></mspace><mo>∘</mo></msup><mi mathvariant="normal">C</mi></mrow><annotation encoding="application/x-tex">10\ ^\circ\mathrm{C}</annotation></semantics></math>,
-entre
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>10</mn><msup><mspace width="0.222em"></mspace><mo>∘</mo></msup><mi mathvariant="normal">C</mi></mrow><annotation encoding="application/x-tex">-10\ ^\circ\mathrm{C}</annotation></semantics></math>
-et
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>40</mn><msup><mspace width="0.222em"></mspace><mo>∘</mo></msup><mi mathvariant="normal">C</mi></mrow><annotation encoding="application/x-tex">40\ ^\circ\mathrm{C}</annotation></semantics></math>
-:</p>
+\]</span></p>
+<p>Pour un tablier acier de 100 m, posé à <span class="math inline">\(10\ ^\circ\mathrm{C}\)</span>, entre <span class="math inline">\(-10\ ^\circ\mathrm{C}\)</span> et <span class="math inline">\(40\ ^\circ\mathrm{C}\)</span> :</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/dilat_joint.html">dilat_joint</a></span><span class="op">(</span>L0 <span class="op">=</span> <span class="fl">100</span>, alpha <span class="op">=</span> <span class="fl">12e-6</span>, T_min <span class="op">=</span> <span class="op">-</span><span class="fl">10</span>, T_max <span class="op">=</span> <span class="fl">40</span>, T_ref <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
 <span><span class="co">#&gt; $allongement_mm</span></span>
@@ -298,9 +279,7 @@ et
 </h3>
 <p>Le jeu de données <code>materiaux</code> fournit des coefficients de
 dilatation. On calcule la course du joint pour chaque matériau (le
-composite carbone/époxy est exclu : son
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>α</mi><mi>x</mi></msub><annotation encoding="application/x-tex">\alpha_x</annotation></semantics></math>
-est négatif).</p>
+composite carbone/époxy est exclu : son <span class="math inline">\(\alpha_x\)</span> est négatif).</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">utiles</span> <span class="op">&lt;-</span> <span class="va">materiaux</span><span class="op">[</span><span class="va">materiaux</span><span class="op">$</span><span class="va">alpha_x</span> <span class="op">&gt;</span> <span class="fl">0</span>, <span class="op">]</span></span>
 <span><span class="va">utiles</span><span class="op">$</span><span class="va">course_mm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">vapply</a></span><span class="op">(</span></span>
@@ -359,9 +338,8 @@ est négatif).</p>
 <span>                x <span class="op">=</span> <span class="cn">NULL</span>, y <span class="op">=</span> <span class="st">"course (mm)"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="dilatR_files/figure-html/graphique-comparaison-1.png" class="r-plt" alt="" width="576"></p>
-<p>La course est proportionnelle à
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>
-: celle de l’aluminium est près de vingt fois celle de l’Invar.</p>
+<p>La course est proportionnelle à <span class="math inline">\(\alpha\)</span> : celle de l’aluminium est près de
+vingt fois celle de l’Invar.</p>
 </div>
 </div>
 <div class="section level2">
@@ -369,27 +347,22 @@ est négatif).</p>
 </h2>
 <ul>
 <li>
-<strong>Premier ordre</strong> :
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mn>1</mn><mo>+</mo><mi>α</mi><mspace width="0.167em"></mspace><mi mathvariant="normal">Δ</mi><mi>T</mi></mrow><annotation encoding="application/x-tex">s = 1 + \alpha\,\Delta T</annotation></semantics></math>
-n’est exact que pour de petites déformations ;
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi mathvariant="normal">Δ</mi><mi>T</mi><mo stretchy="false" form="postfix">)</mo><mo>≠</mo><mi>D</mi><mo stretchy="false" form="prefix">(</mo><mi mathvariant="normal">Δ</mi><mi>T</mi><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">D(-\Delta T) \neq D(\Delta T)^{-1}</annotation></semantics></math>,
-avec un écart d’ordre
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>α</mi><mspace width="0.167em"></mspace><mi mathvariant="normal">Δ</mi><mi>T</mi><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(\alpha\,\Delta T)^2</annotation></semantics></math>.</li>
+<strong>Premier ordre</strong> : <span class="math inline">\(s = 1 +
+\alpha\,\Delta T\)</span> n’est exact que pour de petites déformations ;
+<span class="math inline">\(D(-\Delta T) \neq D(\Delta T)^{-1}\)</span>,
+avec un écart d’ordre <span class="math inline">\((\alpha\,\Delta
+T)^2\)</span>.</li>
 <li>
-<strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>
-constant</strong> : en réalité
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>
-varie légèrement avec la température.</li>
+<strong><span class="math inline">\(\alpha\)</span>
+constant</strong> : en réalité <span class="math inline">\(\alpha\)</span> varie légèrement avec la
+température.</li>
 <li>
 <strong>Température uniforme, dilatation libre</strong> : pas de
 gradient dans la section, pas d’appui bloqué, pas de retrait ni de
 fluage du béton.</li>
 <li>
-<strong>Axes alignés avec le repère</strong> : sinon
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>D</mi><mo>′</mo></msup><mo>=</mo><mi>R</mi><mspace width="0.167em"></mspace><mi>D</mi><mspace width="0.167em"></mspace><msup><mi>R</mi><mi>𝖳</mi></msup></mrow><annotation encoding="application/x-tex">D' = R\,D\,R^{\mathsf T}</annotation></semantics></math>
-avec
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
-une rotation (mêmes valeurs propres, axes tournés).</li>
+<strong>Axes alignés avec le repère</strong> : sinon <span class="math inline">\(D' = R\,D\,R^{\mathsf T}\)</span> avec <span class="math inline">\(R\)</span> une rotation (mêmes valeurs propres,
+axes tournés).</li>
 <li>
 <strong>Températures simplifiées</strong> : les valeurs
 réglementaires viennent de l’Eurocode 1, actions thermiques (EN
@@ -398,6 +371,10 @@ réglementaires viennent de l’Eurocode 1, actions thermiques (EN
 <strong>Valeurs de <code>materiaux</code> indicatives</strong> : à
 remplacer par des valeurs sourcées.</li>
 </ul>
+<p class="page-nav">
+<a href="sommaire.html">← Sommaire</a> ·
+<a href="remerciements.html">Suite : remerciements →</a>
+</p>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
