@@ -1,6 +1,6 @@
 # dilatR
 
-![Logo dilatR](logo.jpg)
+![Logo dilatR](assets/logo.jpg)
 
 Projet de programmation R · ANNEE_ACAD
 
