@@ -1,5 +1,5 @@
 <div class="cover">
-<img src="assets/logo.jpg" class="cover-logo" alt="Logo dilatR">
+<img src="logo.png" class="cover-logo" alt="Logo dilatR">
 <p class="cover-kicker">Projet de programmation R · ANNEE_ACAD</p>
 <h1 class="cover-title">dilatR</h1>
 <p class="cover-theme">Matrices de dilatation : de la théorie au dimensionnement des joints de pont</p>
