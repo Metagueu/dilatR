@@ -1,23 +1,23 @@
 # dilatR
 
-![Logo dilatR](logo.png)
+![Logo dilatR](logo.jpg)
 
-Projet de programmation R · ANNEE_ACAD
+Projet de programmation R · 2026-2027
 
 Matrices de dilatation : de la théorie au dimensionnement des joints de
 pont
 
-Présenté par**NOM_ETUDIANT**
+Présenté par**Ngoufo Metagueu Jordan Christagi**
 
-Matière**Programmation R**
+Matière**INTRODUCTION A R**
 
-Niveau**Niveau 3 · Science des données et IA**
+Niveau**NIVEAU 3 Science de Données et Intelligence Artificielle**
 
-Enseignant**ENSEIGNANT_NOM**
+Enseignant**Mr. NGNEUMEU IVAN**
 
-Établissement**ETABLISSEMENT_NOM**
+Établissement**Ecole Nationale Supérieure Polytechnique de Douala**
 
-Année académique**ANNEE_ACAD**
+Année académique**2026-2027**
 
 [Accéder au sommaire
 →](https://metagueu.github.io/dilatR/articles/sommaire.md)

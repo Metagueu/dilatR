@@ -14,6 +14,8 @@ charge.
 Ce tutoriel suit la démarche du package : une **matrice de dilatation**
 décrit la déformation, ses propriétés (déterminant, valeurs propres) ont
 un sens physique, puis on l’applique au dimensionnement d’un joint.
+![Schéma d'un joint de dilatation de pont](joints.jpg)![Schéma d’un
+joint de dilatation de pont](joint.jpg)
 
 ``` r
 
@@ -256,7 +258,7 @@ knitr::kable(
 utiles$materiau <- factor(utiles$materiau,
                           levels = utiles$materiau[order(utiles$course_mm)])
 ggplot2::ggplot(utiles, ggplot2::aes(x = materiau, y = course_mm)) +
-  ggplot2::geom_col(fill = "#0E7C86") +
+  ggplot2::geom_col(fill = "#0E6C56") +
   ggplot2::coord_flip() +
   ggplot2::labs(title = "Course du joint pour 100 m de tablier",
                 subtitle = "Temperatures de -10 a 40 C",

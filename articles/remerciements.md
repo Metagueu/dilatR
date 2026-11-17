@@ -2,10 +2,8 @@
 
 ## Merci pour votre attention
 
-- À **ENSEIGNANT_NOM**, pour son enseignement de la programmation R et
-  son encadrement.
-- À **ETABLISSEMENT_NOM**, pour le cadre de formation.
-- À mes camarades, pour leurs remarques et leur soutien.
+- À **Mr. NGNEUMEU IVAN**, pour son enseignement de la programmation R
+  et son encadrement.
 - À vous tous, pour votre écoute. **Place aux questions.**
 
 [← Retour au
