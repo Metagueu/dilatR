@@ -6,9 +6,7 @@ output: rmarkdown::html_vignette
 <div class="thanks">
 <h2>Merci pour votre attention</h2>
 <ul>
-<li>À <b>ENSEIGNANT_NOM</b>, pour son enseignement de la programmation R et son encadrement.</li>
-<li>À <b>ETABLISSEMENT_NOM</b>, pour le cadre de formation.</li>
-<li>À mes camarades, pour leurs remarques et leur soutien.</li>
+<li>À <b>Mr. NGNEUMEU IVAN</b>, pour son enseignement de la programmation R et son encadrement.</li>
 <li>À vous tous, pour votre écoute. <b>Place aux questions.</b></li>
 </ul>
 </div>
