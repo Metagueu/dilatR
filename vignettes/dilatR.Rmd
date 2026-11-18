@@ -24,7 +24,8 @@ Ce tutoriel suit la démarche du package : une **matrice de dilatation** décrit
 la déformation, ses propriétés (déterminant, valeurs propres) ont un sens
 physique, puis on l'applique au dimensionnement d'un joint.
 <img src="joints.jpg" alt="Schéma d'un joint de dilatation de pont" style="max-width:100%; height:auto;" />
-![Schéma d'un joint de dilatation de pont](joint.jpg){width=75%}
+
+![Schéma d'un joint de dilatation de pont](../joint.jpg){width=75%}
 
 ```{r setup}
 library(dilatR)
