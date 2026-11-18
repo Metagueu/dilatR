@@ -14,7 +14,6 @@ charge.
 Ce tutoriel suit la démarche du package : une **matrice de dilatation**
 décrit la déformation, ses propriétés (déterminant, valeurs propres) ont
 un sens physique, puis on l’applique au dimensionnement d’un joint.
-![Schéma d'un joint de dilatation de pont](joints.jpg)
 
 ![Schéma d’un joint de dilatation de pont](../joint.jpg)
 

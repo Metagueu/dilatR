@@ -2,7 +2,7 @@
 
 ![Logo dilatR](logo.jpg)
 
-Projet de programmation R · 2026-2027
+Projet d’introduction à R · 2025-2026
 
 Matrices de dilatation : de la théorie au dimensionnement des joints de
 pont
@@ -17,7 +17,7 @@ Enseignant**Mr. NGNEUMEU IVAN**
 
 Établissement**Ecole Nationale Supérieure Polytechnique de Douala**
 
-Année académique**2026-2027**
+Année académique**2025-2026**
 
 [Accéder au sommaire
 →](https://metagueu.github.io/dilatR/articles/sommaire.md)
